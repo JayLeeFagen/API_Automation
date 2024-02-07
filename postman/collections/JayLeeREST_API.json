@@ -1,0 +1,545 @@
+{
+	"info": {
+		"_postman_id": "596ef575-2244-4128-8a8c-c336a58b1a07",
+		"name": "JayLeeREST_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "21800668-596ef575-2244-4128-8a8c-c336a58b1a07"
+	},
+	"item": [
+		{
+			"name": "AllBooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "236389ad-85a0-448f-9b83-23d7451db1be",
+						"exec": [
+							"pm.test(\"ResponseCode\"), function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "a6f951f7-22aa-46e5-abb9-179ba5393cc5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BooksURL}}/books",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "20",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6b7ffe05-c952-4b9b-aa5e-3f6dcc6d1637",
+					"name": "Example1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?test=123",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jan 2023 18:35:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16e-T1ze8Rqkb39eMVslU2J9CL/3ee8\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "set-cookie",
+							"value": "sails.sid=s%3AlYHcXA1C5Ui533hivunL9cYUrf9wDVfV.RMHGRlh2B2nqBjWyUIfViC3EhJ1%2BoXZlPer%2B%2BbiPSis; Path=/; HttpOnly"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"args\": {\n        \"test\": \"123\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"x-forwarded-port\": \"443\",\n        \"host\": \"postman-echo.com\",\n        \"x-amzn-trace-id\": \"Root=1-63d0250d-66674eb25b5a3cc3556e6a7d\",\n        \"user-agent\": \"PostmanRuntime/7.30.0\",\n        \"accept\": \"*/*\",\n        \"postman-token\": \"1f7aba23-9e4d-437c-9bf7-3192656537cd\",\n        \"accept-encoding\": \"gzip, deflate, br\"\n    },\n    \"url\": \"https://postman-echo.com/get?test=123\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AllOrders",
+			"id": "bf91c864-0660-450a-8c02-81ceb61b8853",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JayKey1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BooksURL}}/orders/",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"orders",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fiction",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0a6dda9c-80bb-4bf1-81ef-7a129f22174b",
+					"name": "Example1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/get?test=123",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 24 Jan 2023 18:35:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16e-T1ze8Rqkb39eMVslU2J9CL/3ee8\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "set-cookie",
+							"value": "sails.sid=s%3AlYHcXA1C5Ui533hivunL9cYUrf9wDVfV.RMHGRlh2B2nqBjWyUIfViC3EhJ1%2BoXZlPer%2B%2BbiPSis; Path=/; HttpOnly"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"args\": {\n        \"test\": \"123\"\n    },\n    \"headers\": {\n        \"x-forwarded-proto\": \"https\",\n        \"x-forwarded-port\": \"443\",\n        \"host\": \"postman-echo.com\",\n        \"x-amzn-trace-id\": \"Root=1-63d0250d-66674eb25b5a3cc3556e6a7d\",\n        \"user-agent\": \"PostmanRuntime/7.30.0\",\n        \"accept\": \"*/*\",\n        \"postman-token\": \"1f7aba23-9e4d-437c-9bf7-3192656537cd\",\n        \"accept-encoding\": \"gzip, deflate, br\"\n    },\n    \"url\": \"https://postman-echo.com/get?test=123\"\n}"
+				}
+			]
+		},
+		{
+			"name": "BookById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5a69cb78-990f-4252-94a1-03b3fc5d24bf",
+						"exec": [
+							"pm.test(\"Baseline\", function () {\r",
+							"    pm.expect(pm.environment.name).to.eql(\"JayLeeMockServer\");\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.be.json;\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.type)\r",
+							"    .to.be.oneOf([\"non-fiction\"]);\r",
+							"\r",
+							"\r",
+							"    //pm.collectionVariables.get(\"BookPrice\");\r",
+							"   \r",
+							"pm.test(\"BookID\", () => {\r",
+							"  pm.expect(responseJson.name).to.eql(\"Just as I Am\");//variables\r",
+							"  pm.expect(responseJson.price).to.eql(20.33);\r",
+							"    //pm.expect(responseJson.price).to.eql(BookPrice);\r",
+							"  pm.expect(responseJson.price).to.be.a(\"number\");\r",
+							" });\r",
+							"   \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f567ea09-7e82-40fd-9a9e-3b9464ca106e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BooksURL}}/books/:bookId",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"books",
+						":bookId"
+					],
+					"variable": [
+						{
+							"key": "bookId",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewOrder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d83d51d2-e8ce-4e77-b31f-d605c082276a",
+						"exec": [
+							"pm.test(\"NewOrderCreated\", () => {\r",
+							"  pm.response.to.have.status(\"Created\");\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(400)\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.customerName).to.eql(\"Jay44\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f16f03f0-4350-4fd9-9285-3d32afd94d60",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-length": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JayKey1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": \"Jay1\",\r\n        \"bookId\": 1,\r\n        \"customerName\": \"Jay1\",\r\n        \"createdBy\": \"29d47def532d4c0f5047242af0983e513a6cf07f3392174640ab98f1efbc2e3f\",\r\n        \"quantity\": 1,\r\n        \"timestamp\": 1706210961325\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BooksURL}}/orders",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AuthAPI",
+			"id": "3e115e28-7a91-48df-8972-60168b8bdc37",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-length": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JayKey1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Postman\",\r\n   \"clientEmail\": \"jayleefagen@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BooksURL}}/api-clients/",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"api-clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BooksURL}}/orders/Lf8leK-md0erQHWdXO6vT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae7ad351-76a0-49cc-8a25-a8373a1b84af",
+						"exec": [
+							"pm.test(\"ResponseCode204\"), function(){\r",
+							"pm.response.to.have.status(204);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b2193a65-8f63-42cf-b5b7-db590bcccf49",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JayKey1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BooksURL}}/orders/TWqK5Ji2erCj10fEht55U",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"orders",
+						"TWqK5Ji2erCj10fEht55U"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BooksURL}}/orders/Lf8leK-md0erQHWdXO6vT Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fcd3b553-848e-45eb-b68c-735311b377a9",
+						"exec": [
+							"pm.test(\"OrderUpdated\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(300)\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.customerName).to.eql(\"Jay1111\");\r",
+							"  pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9340795b-ca1a-46b3-ae69-461062f5feb3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JayKey1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"customerName\": \"Jay2222\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BooksURL}}/orders/TWqK5Ji2erCj10fEht55U",
+					"host": [
+						"{{BooksURL}}"
+					],
+					"path": [
+						"orders",
+						"TWqK5Ji2erCj10fEht55U"
+					],
+					"query": [
+						{
+							"key": "customerName",
+							"value": "Just Testing!",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "661d4d07-db6b-4b27-a921-ed3a2d18cd88",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fde2cfed-a073-4002-9953-ee973bc499e7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3a944bd7-3ecb-4512-bf37-94e1fdab69e7",
+			"key": "BooksURL",
+			"value": "https://simple-books-api.glitch.me"
+		},
+		{
+			"id": "25032a40-d337-45a8-a565-a7894831bfce",
+			"key": "BooksToken",
+			"value": "---",
+			"type": "string"
+		},
+		{
+			"id": "681a96d6-f755-4d4c-9871-829b7156e723",
+			"key": "variable_Jay1",
+			"value": "123"
+		}
+	]
+}
